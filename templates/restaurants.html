@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+</head>
+<body>
+    <h1>Restaurants</h1>
+
+    <a href="#">Create New Restaurant</a>
+
+    {% if restaurants == [] %}
+    <p>You currently have no restaurants</p>
+    {% endif %}
+
+    <p><br></p>
+
+    {% for restaurant in restaurants %}
+
+    <p>{{restaurant.name}}</p>
+    <a href="#">Edit Restaurant</a>
+    <a href="#">Delete Restaurant</a>
+    <p><br></p>
+    
+    {% endfor %}
+
+</body>
+</html>

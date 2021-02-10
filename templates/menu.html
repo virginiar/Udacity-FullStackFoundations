@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<body>
+    <h1>{{restaurant.menu}}</h1>
+
+    <a href="#">Create New Item</a>
+
+    {% if items|length == 0 %}
+    <p>You currently have no menu items</p>
+    {% endif %}
+
+    <h2>Appetizers</h2>
+
+    {% for item in items %}
+    {% if item.course == "Appetizer" %}
+
+    <h3>{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.price}}</p>
+    <a href="#">Edit</a>
+    <a href="#">Delete</a>
+    
+    {% endif %}
+    {% endfor %}
+    
+
+    <h2>Entrees</h2>
+
+    {% for item in items %}
+    {% if item.course == "Entree" %}
+
+    <h3>{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.price}}</p>
+    <a href="#">Edit</a>
+    <a href="#">Delete</a>
+
+    {% endif %}
+    {% endfor %}
+
+    <h2>Desserts</h2>
+
+    {% for item in items %}
+    {% if item.course == "Dessert" %}
+
+    <h3>{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.price}}</p>
+    <a href="#">Edit</a>
+    <a href="#">Delete</a>
+
+    {% endif %}
+    {% endfor %}
+
+    <h2>Beverage</h2>
+
+    {% for item in items %}
+    {% if item.course == "Beverage" %}
+
+    <h3>{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.price}}</p>
+    <a href="#">Edit</a>
+    <a href="#">Delete</a>
+
+    {% endif %}
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Menu Item</title>
+</head>
+<body>
+    <h1>Edit Menu Item</h1>
+
+    <form action="#">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name" placeholder="{{item.name}}"><br>
+        <label for="description">Description:</label><br>
+        <input type="text" name="description" id="description" placeholder="{{item.description}}"><br>
+        <label for="price">Price:</label><br>
+        <input type="text" name="price" id="price" placeholder="{{item.price}}"><br>
+        <label for="course">Course:</label><br>
+
+        {% if item.course == "Appetizer" %}
+        <input type="radio" id="course" name="course" value="Appetizer" checked>Appetizer<br>
+        {% else %}
+        <input type="radio" id="course" name="course" value="Appetizer">Appetizer<br>
+        {% endif %}
+
+        {% if item.course == "Entree" %}
+        <input type="radio" id="course" name="course" value="Entree" checked>Entree<br>
+        {% else %}
+        <input type="radio" id="course" name="course" value="Entree">Entree<br>
+        {% endif %}
+
+        {% if item.course == "Dessert" %}
+        <input type="radio" id="course" name="course" value="Dessert" checked>Dessert<br>
+        {% else %}
+        <input type="radio" id="course" name="course" value="Dessert">Dessert<br>
+        {% endif %}
+
+        {% if item.course == "Beverage" %}
+        <input type="radio" id="course" name="course" value="Beverage" checked>Beverage<br>
+        {% else %}
+        <input type="radio" id="course" name="course" value="Beverage">Beverage<br>
+        {% endif %}
+
+        <input type="submit" value="Edit">
+    </form>
+</body>
+</html>
