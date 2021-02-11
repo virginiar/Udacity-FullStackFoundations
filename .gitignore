@@ -1,2 +1,5 @@
+.vscode
 .vscode/launch.json
 .vscode/settings.json
+restaurantmenu.db
+__pycache__

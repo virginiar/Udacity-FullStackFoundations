@@ -9,12 +9,12 @@
 <body>
     <h1>New Restaurant</h1>
 
-    <form action="#">
+    <form action="{{url_for('newRestaurant')}}" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" name="name" id="name">
         <input type="submit" value="Create">
         <br>
     </form>
-    <a href="#">Cancel</a>
+    <a href="{{url_for('showRestaurants')}}">Cancel</a>
 </body>
 </html>

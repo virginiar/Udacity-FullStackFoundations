@@ -9,11 +9,11 @@
 <body>
     <h1>{{restaurant.menu}}</h1>
 
-    <a href="#">Create New Item</a>
+    <a href="{{url_for('newMenuItem', restaurant_id=restaurant.id)}}">Create New Item</a>
 
     {% if items|length == 0 %}
     <p>You currently have no menu items</p>
-    {% endif %}
+    {% else %}
 
     <h2>Appetizers</h2>
 
@@ -23,8 +23,8 @@
     <h3>{{item.name}}</h3>
     <p>{{item.description}}</p>
     <p>{{item.price}}</p>
-    <a href="#">Edit</a>
-    <a href="#">Delete</a>
+    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Edit</a>
+    <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Delete</a>
     
     {% endif %}
     {% endfor %}
@@ -38,8 +38,8 @@
     <h3>{{item.name}}</h3>
     <p>{{item.description}}</p>
     <p>{{item.price}}</p>
-    <a href="#">Edit</a>
-    <a href="#">Delete</a>
+    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Edit</a>
+    <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Delete</a>
 
     {% endif %}
     {% endfor %}
@@ -52,8 +52,8 @@
     <h3>{{item.name}}</h3>
     <p>{{item.description}}</p>
     <p>{{item.price}}</p>
-    <a href="#">Edit</a>
-    <a href="#">Delete</a>
+    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Edit</a>
+    <a href="#{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Delete</a>
 
     {% endif %}
     {% endfor %}
@@ -66,11 +66,14 @@
     <h3>{{item.name}}</h3>
     <p>{{item.description}}</p>
     <p>{{item.price}}</p>
-    <a href="#">Edit</a>
-    <a href="#">Delete</a>
+    <a href="{{url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Edit</a>
+    <a href="{{url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=item.id)}}">Delete</a>
 
     {% endif %}
     {% endfor %}
-
+    {% endif %}
+    <p><a href="{{url_for('showRestaurants')}}">
+        Back to list of restaurants</a></p>
+    
 </body>
 </html>
