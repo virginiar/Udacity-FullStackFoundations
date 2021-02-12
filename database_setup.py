@@ -39,7 +39,7 @@ class MenuItem(Base):
     restaurant = relationship(Restaurant)
 
     @property
-    def serializable(self):
+    def serialize(self):
         """
         Return object data in a easily serializable format
         """
